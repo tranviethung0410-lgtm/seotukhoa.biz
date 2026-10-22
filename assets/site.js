@@ -73,3 +73,12 @@
     Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
   }
 })();
+
+// GA4: đo lượt bấm Zalo, gọi điện, email (sự kiện khách tiềm năng)
+document.addEventListener('click', function (ev) {
+  var a = ev.target.closest && ev.target.closest('a[href]');
+  if (!a || typeof window.gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  var name = h.indexOf('zalo.me') > -1 ? 'click_zalo' : h.indexOf('tel:') === 0 ? 'click_phone' : h.indexOf('mailto:') === 0 ? 'click_email' : '';
+  if (name) window.gtag('event', name, { link_url: h, page_path: location.pathname, link_text: (a.textContent || '').trim().slice(0, 60) });
+});
