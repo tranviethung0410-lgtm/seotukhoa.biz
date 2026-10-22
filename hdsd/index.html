@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEOtukhoa Studio – Biên tập viên SEO bằng AI | Giới thiệu và hướng dẫn sử dụng</title>
+<meta name="description" content="SEOtukhoa Studio: phần mềm SEO bằng AI, dùng số liệu thật từ Google. Chỉ cần tên miền, link Fanpage và từ khóa, phần mềm tự theo dõi thứ hạng, tối ưu an toàn, viết bài, đăng Fanpage và báo kết quả mỗi sáng.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%231f3370'/%3E%3Crect x='9' y='23' width='5' height='8' rx='1.6' fill='%23fff' fill-opacity='.6'/%3E%3Crect x='17.5' y='18' width='5' height='13' rx='1.6' fill='%23fff' fill-opacity='.85'/%3E%3Crect x='26' y='12' width='5' height='19' rx='1.6' fill='%23ffc23d'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://seotukhoa.biz/hdsd/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --navy: #0b1533; --navy2: #15244f; --navy3: #1f3370;
+  --ink: #141c33; --muted: #5b6580; --line: #e1e5ee; --bg: #f2f4f9; --card: #fff;
+  --gold: #ffc23d; --gold2: #ff9f1c; --gold-soft: #fff5da;
+  --red: #e5402f; --red-soft: #fdecea; --green: #12a061; --green-soft: #e2f6eb; --blue: #2563eb; --blue-soft: #e8efff;
+  --radius: 16px; --shadow: 0 1px 2px rgba(11,21,51,.05), 0 10px 30px rgba(11,21,51,.08);
+  --f: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 16px/1.6 var(--f); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { margin: 0; letter-spacing: -.015em; }
+h2 { font-size: 34px; font-weight: 900; line-height: 1.2; }
+h3 { font-size: 18px; font-weight: 800; line-height: 1.3; }
+p { margin: 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.lead { color: var(--muted); font-size: 17px; margin-top: 10px; max-width: 760px; }
+section, .part { scroll-margin-top: 72px; }
+section { padding: 72px 0; }
+.alt { background: #fff; }
+
+/* nút */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 24px; border-radius: 12px; font: 800 16px var(--f); text-decoration: none; cursor: pointer; border: 0; white-space: nowrap; }
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #2a1a00; box-shadow: 0 10px 24px rgba(255,159,28,.35); }
+.btn-gold:hover { filter: brightness(1.05); }
+.btn-ghost { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.28); }
+.btn-ghost:hover { background: rgba(255,255,255,.14); }
+.btn-navy { background: var(--navy); color: #fff; }
+
+/* thanh trên */
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(11,21,51,.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.08); }
+.topbar .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 800; font-size: 17px; }
+.logo .mark { width: 36px; height: 36px; flex: none; filter: drop-shadow(0 6px 14px rgba(58,95,208,.45)); }
+.logo span { letter-spacing: -.01em; }
+.logo b { color: var(--gold); font-weight: 900; }
+.menu { display: flex; gap: 22px; margin-left: auto; }
+.menu a { color: #cfd8f6; text-decoration: none; font-size: 14px; font-weight: 600; }
+.menu a:hover { color: #fff; }
+.topbar .btn { height: 40px; padding: 0 16px; font-size: 14px; }
+
+/* đầu trang */
+.hero { position: relative; overflow: hidden; color: #fff; padding: 64px 0 72px;
+  background: radial-gradient(700px 420px at 85% 10%, #2c4aa8 0%, transparent 60%), radial-gradient(500px 360px at 0% 100%, #1b2f6b 0%, transparent 60%), var(--navy); }
+.hero::before { content: ""; position: absolute; inset: 0; opacity: .6; pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 44px 44px; -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%); mask-image: linear-gradient(180deg, #000 30%, transparent 100%); }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; background: rgba(255,194,61,.14); border: 1px solid rgba(255,194,61,.35); color: var(--gold); font-size: 13px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.hero h1 { font-size: 50px; font-weight: 900; line-height: 1.12; margin: 18px 0 16px; letter-spacing: -.02em; }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero .sub { color: #cfd8f6; font-size: 18px; max-width: 560px; }
+.hero .ctas { display: flex; gap: 12px; margin: 26px 0 12px; flex-wrap: wrap; }
+.hero .note { color: #9fb0e0; font-size: 14px; }
+.stats { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.stat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 16px; min-width: 150px; }
+.stat b { display: block; font-size: 26px; font-weight: 900; color: #fff; line-height: 1.2; }
+.stat span { color: #aebce6; font-size: 13px; }
+.mock { position: relative; }
+.browser { border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.15); }
+.browser .bar { height: 30px; background: #e9edf5; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+.browser .bar i { width: 10px; height: 10px; border-radius: 50%; background: #c9d1e1; }
+.browser .bar i:nth-child(1) { background: #ff6b5f; } .browser .bar i:nth-child(2) { background: #ffc23d; } .browser .bar i:nth-child(3) { background: #2fcc71; }
+.browser .bar span { margin-left: 10px; font-size: 11px; color: #6b7590; }
+.float { position: absolute; background: #fff; color: var(--ink); border-radius: 12px; padding: 10px 14px; box-shadow: 0 14px 30px rgba(0,0,0,.3); font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.float i { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-style: normal; }
+.float i svg { width: 16px; height: 16px; }
+.float.f1 { left: -22px; bottom: 28px; } .float.f1 i { background: var(--green-soft); color: var(--green); }
+.float.f2 { right: -12px; top: -16px; } .float.f2 i { background: var(--gold-soft); color: #a76b00; }
+
+/* thẻ */
+.grid { display: grid; gap: 18px; }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.alt .card { box-shadow: none; background: var(--bg); border-color: transparent; }
+.icon { position: relative; width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; margin-bottom: 16px; color: var(--gold);
+  background: linear-gradient(150deg, #2b4ba6 0%, #15244f 55%, #0b1533 100%);
+  box-shadow: 0 10px 20px rgba(11,21,51,.22), inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 0 1px rgba(255,255,255,.06); }
+.icon::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(60% 50% at 30% 20%, rgba(255,255,255,.18), transparent 70%); pointer-events: none; }
+.icon svg { width: 25px; height: 25px; position: relative; z-index: 1; }
+.bi { width: 19px; height: 19px; flex: none; }
+.tag .bi { width: 15px; height: 15px; }
+.ci { width: 17px; height: 17px; color: var(--green); flex: none; }
+.card p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+.head { margin-bottom: 32px; }
+
+/* cách hoạt động */
+.how { display: grid; grid-template-columns: 1.1fr 1fr; gap: 44px; align-items: center; }
+.shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 50px rgba(11,21,51,.18); background: #fff; }
+.flow { list-style: none; margin: 0; padding: 0; counter-reset: f; }
+.flow li { position: relative; padding: 0 0 18px 52px; counter-increment: f; }
+.flow li::before { content: counter(f); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 900; display: grid; place-items: center; font-size: 15px; }
+.flow li::after { content: ""; position: absolute; left: 16px; top: 36px; bottom: 2px; width: 2px; background: var(--line); }
+.flow li:last-child::after { display: none; }
+.flow b { display: block; font-size: 16px; }
+.flow span { color: var(--muted); font-size: 15px; }
+
+/* danh sách tính năng */
+.feat h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.feat h3 i { font-style: normal; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; color: #8a5200;
+  background: linear-gradient(150deg, #fff3cf 0%, #ffe199 100%); box-shadow: inset 0 0 0 1px rgba(224,161,0,.25); }
+.feat h3 i svg { width: 21px; height: 21px; }
+.ticks { list-style: none; padding: 0; margin: 0; }
+.ticks li { position: relative; padding-left: 24px; margin: 7px 0; color: #34405e; font-size: 15px; }
+.ticks li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--green); font-weight: 900; }
+
+/* giao diện */
+.tabs-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.shotcard figure { margin: 0; }
+.shotcard figcaption { padding: 14px 4px 0; }
+.shotcard figcaption b { display: block; font-size: 16px; }
+.shotcard figcaption span { color: var(--muted); font-size: 14.5px; }
+.phone { width: 230px; border-radius: 32px; padding: 10px; background: var(--navy); box-shadow: 0 24px 50px rgba(11,21,51,.3); }
+.phone img { border-radius: 24px; }
+.easy { display: grid; grid-template-columns: 1fr 260px; gap: 36px; align-items: center; margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); font-size: 15px; }
+th { text-align: left; background: var(--navy); color: #fff; font-weight: 700; padding: 12px 16px; font-size: 14px; }
+td { padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+td:first-child { font-weight: 700; width: 38%; }
+
+/* an toàn */
+.safe { background: var(--navy); color: #fff; }
+.safe .lead { color: #cfd8f6; }
+.safe .eyebrow { color: var(--gold); }
+.safe .card { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); box-shadow: none; }
+.safe .card p { color: #b9c5ea; }
+.safe .icon { color: var(--navy); background: linear-gradient(150deg, #ffe08a 0%, #ffc23d 50%, #ff9f1c 100%);
+  box-shadow: 0 10px 22px rgba(255,159,28,.28), inset 0 1px 0 rgba(255,255,255,.55); }
+
+/* so sánh */
+.cmp { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 18px; align-items: stretch; }
+.cmp .card h3 { margin-bottom: 12px; }
+.cmp ul { list-style: none; padding: 0; margin: 0; }
+.cmp li { position: relative; padding-left: 24px; margin: 9px 0; font-size: 15px; color: #34405e; }
+.cmp .bad li::before { content: "✕"; position: absolute; left: 0; color: var(--red); font-weight: 900; }
+.cmp .bad h3 { color: var(--red); }
+.cmp .good { background: var(--navy); color: #fff; border: 2px solid var(--gold); transform: translateY(-6px); }
+.cmp .good li { color: #e3e9fb; }
+.cmp .good li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 900; }
+.cmp .good h3 { color: var(--gold); }
+
+/* phù hợp */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-weight: 600; font-size: 15px; }
+
+/* bước bắt đầu */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
+.step { position: relative; padding-top: 30px; }
+.step .num { position: absolute; top: -18px; left: 22px; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #2a1a00; display: grid; place-items: center; font-weight: 900; font-size: 18px; box-shadow: 0 8px 20px rgba(255,159,28,.35); }
+.step p { color: var(--muted); }
+.cta-box { margin-top: 34px; background: linear-gradient(120deg, var(--navy) 0%, var(--navy3) 100%); color: #fff; border-radius: 20px; padding: 30px; display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.cta-box p { color: #cfd8f6; margin-top: 6px; }
+.fill { background: #fff3c4; color: #6b4a00; border: 1px dashed #e0a100; border-radius: 6px; padding: 0 6px; font-weight: 700; }
+
+/* hướng dẫn */
+.guide-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.guide-nav a { padding: 8px 16px; border-radius: 99px; background: var(--navy); color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; }
+.guide-nav a.light { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+.part { margin-top: 40px; }
+.part > h3 { font-size: 22px; margin-bottom: 6px; }
+.part > p { color: var(--muted); margin-bottom: 18px; }
+details { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; }
+details[open] { box-shadow: var(--shadow); }
+summary { cursor: pointer; list-style: none; padding: 18px 22px; font-weight: 800; font-size: 16.5px; display: flex; align-items: center; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary .n { width: 30px; height: 30px; border-radius: 9px; background: var(--gold-soft); display: grid; place-items: center; flex: none; font-size: 15px; }
+summary::after { content: "+"; margin-left: auto; font-size: 22px; font-weight: 600; color: var(--muted); }
+details[open] summary::after { content: "–"; }
+.body { padding: 0 22px 20px 64px; color: #34405e; font-size: 15.5px; }
+.body ol, .body ul { margin: 6px 0 10px; padding-left: 20px; }
+.body li { margin: 6px 0; }
+.body .tip { margin-top: 10px; padding: 10px 14px; border-radius: 10px; background: var(--blue-soft); color: #1d3f8f; font-size: 14.5px; }
+.body .warn { margin-top: 10px; padding: 10px 14px; border-radius: 10px; background: var(--gold-soft); color: #6b4a00; font-size: 14.5px; }
+.kbd { display: inline-block; padding: 0 7px; border-radius: 6px; background: #eef1f8; border: 1px solid var(--line); font-size: 14px; font-weight: 700; color: var(--navy); }
+.status td:first-child { width: 30%; }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.p-good { background: var(--green-soft); color: #0b7a47; } .p-warn { background: var(--gold-soft); color: #8a5a00; }
+.p-bad { background: var(--red-soft); color: #b42318; } .p-info { background: var(--blue-soft); color: #1d4fb8; } .p-idle { background: #eef0f4; color: #4b5568; }
+
+/* hỏi đáp */
+.faq details summary { font-size: 16px; }
+.faq .body { padding-left: 22px; }
+
+footer { background: var(--navy); color: #aebce6; padding: 40px 0; font-size: 14px; }
+footer .wrap { display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; }
+footer b { color: #fff; }
+footer p { max-width: 640px; margin-top: 8px; }
+
+@media (max-width: 980px) {
+  .hero .wrap, .how, .easy { grid-template-columns: 1fr; }
+  .g3, .cmp, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu { display: none; }
+  .cmp .good { transform: none; }
+  .phone { margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  section { padding: 52px 0; }
+  .hero { padding: 40px 0 56px; }
+  .hero h1 { font-size: 31px; }
+  .hero .sub { font-size: 16px; }
+  h2 { font-size: 24px; }
+  .g2, .g3, .g4, .cmp, .steps, .tabs-shots { grid-template-columns: 1fr; }
+  .steps { gap: 34px; }
+  .float { display: none; }
+  .stat { min-width: 0; flex: 1 1 40%; }
+  .body { padding-left: 22px; }
+  .topbar .btn { display: none; }
+  .btn { width: 100%; }
+  .hero .ctas { flex-direction: column; }
+  td:first-child { width: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a5fd0"/><stop offset=".55" stop-color="#1f3370"/><stop offset="1" stop-color="#0b1533"/></linearGradient><linearGradient id="lg-au" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ffd36b"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg-bg)"/><rect x="0.5" y="0.5" width="39" height="39" rx="10.5" fill="none" stroke="#fff" stroke-opacity=".16"/><rect x="9" y="23" width="5" height="8" rx="1.6" fill="#fff" fill-opacity=".55"/><rect x="17.5" y="18" width="5" height="13" rx="1.6" fill="#fff" fill-opacity=".8"/><rect x="26" y="12" width="5" height="19" rx="1.6" fill="url(#lg-au)"/><path d="M8.5 17.5 15.5 12l4.5 3 8.5-7" fill="none" stroke="url(#lg-au)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.8 8h3.9v3.9" fill="none" stroke="url(#lg-au)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SEO<b>tukhoa</b> Studio</span></a>
+    <nav class="menu">
+      <a href="#tinh-nang">Tính năng</a>
+      <a href="#giao-dien">Giao diện</a>
+      <a href="#an-toan">An toàn</a>
+      <a href="#bat-dau">Bắt đầu</a>
+      <a href="#hdsd">Hướng dẫn sử dụng</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+    </nav>
+    <a class="btn btn-gold" href="#bat-dau">Đăng ký dùng</a>
+  </div>
+</header>
+
+<!-- ============ ĐẦU TRANG ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Phần mềm SEO bằng AI · 100% hợp lệ</span>
+      <h1>Website lên top Google nhờ <em>biên tập viên AI</em> làm việc mỗi đêm</h1>
+      <p class="sub">Anh/chị chỉ cần gửi <b>tên miền, link Fanpage và từ khóa</b>. SEOtukhoa Studio đọc số liệu thật từ Google, tự tối ưu website an toàn, viết bài, đăng Fanpage và báo kết quả mỗi sáng. Không cần biết SEO.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#bat-dau">Bắt đầu ngay <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#cach-hoat-dong">Xem cách hoạt động</a>
+      </div>
+      <p class="note">✓ Không traffic ảo, không click giả · ✓ Mọi thay đổi đều có bản cũ để trả lại</p>
+      <div class="stats">
+        <div class="stat"><b>9</b><span>loại vấn đề tự phát hiện</span></div>
+        <div class="stat"><b>28 ngày</b><span>đo lại mọi thay đổi</span></div>
+        <div class="stat"><b>0</b><span>lượt truy cập ảo</span></div>
+      </div>
+    </div>
+    <div class="mock">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>SEOtukhoa Studio · Tổng quan</span></div>
+        <img src="anh/tong-quan.jpg" alt="Màn hình Tổng quan của SEOtukhoa Studio: số liệu từng website, việc cần chú ý, những gì AI vừa sửa" width="1360" height="860">
+      </div>
+      <div class="float f2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></svg></i>AI vừa sửa tiêu đề · 9/10 điểm</div>
+      <div class="float f1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3.5 10.2l7 2.8 2.8 7z"/><path d="m21 3-10.5 10"/></svg></i>Báo cáo Telegram mỗi sáng</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VÌ SAO CHỌN ============ -->
+<section id="vi-sao">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Vì sao chọn SEOtukhoa Studio</div>
+      <h2>Làm SEO đều đặn mỗi ngày, bằng số liệu thật, không cần người giỏi SEO</h2>
+      <p class="lead">Việc SEO lặp đi lặp lại (xem số liệu, tìm trang tụt hạng, sửa tiêu đề, viết bài, đăng Fanpage) được phần mềm làm mỗi đêm. Anh/chị chỉ xem kết quả.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7.5 15.5v2.5M12 11v7M16.5 7v11"/><path d="m7 11 4-4 3 2 5-5"/></svg></div><h3>Số liệu thật từ Google</h3><p>Đọc trực tiếp Google Search Console, Google Analytics 4 và PageSpeed qua kết nối chính thức. Không đoán, không ước lượng.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"/><path d="M19 15.5l.8 1.9 1.9.8-1.9.8L19 21l-.8-1.9-1.9-.8 1.9-.8z"/></svg></div><h3>Biên tập viên AI tự làm</h3><p>AI viết 3 phương án cho mỗi chỗ cần sửa, một AI thứ hai chấm điểm. Chỉ phương án đạt từ 8/10 mới được áp dụng.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div><h3>An toàn, trả lại được</h3><p>Lưu bản cũ trước mỗi thay đổi. Sau 28 ngày, nếu click giảm hơn 20%, phần mềm tự trả lại bản cũ.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3"/><path d="m14.5 7.5 3 3"/><path d="M13 20h7"/></svg></div><h3>Viết bài có kiểm tra sự thật</h3><p>Tìm hiểu trên web, lập dàn ý, viết, biên tập, soát thông tin. Bài đạt chuẩn mới được hẹn giờ đăng.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h2.5L13 19V5L7.5 9H5a1 1 0 0 0-1 1z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a7.5 7.5 0 0 1 0 11"/></svg></div><h3>Fanpage và video đều đặn</h3><p>Lên lịch đăng Fanpage, chọn video hợp chủ đề, cắt clip dọc cho Reels/Shorts, đo lượt xem và lượt vào website.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3.5 10.2l7 2.8 2.8 7z"/><path d="m21 3-10.5 10"/></svg></div><h3>Báo cáo mỗi sáng</h3><p>Tin Telegram tóm tắt việc đã làm, kết quả đo lại và những gì cần anh/chị chú ý. Xem chi tiết trên giao diện.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÁCH HOẠT ĐỘNG ============ -->
+<section id="cach-hoat-dong" class="alt">
+  <div class="wrap how">
+    <div>
+      <div class="eyebrow">Cách hoạt động</div>
+      <h2>Mỗi đêm, phần mềm làm trọn một vòng SEO</h2>
+      <p class="lead" style="margin-bottom:26px">Từ đọc số liệu đến đo lại kết quả, tự động từ đầu đến cuối.</p>
+      <ol class="flow">
+        <li><b>Đọc số liệu thật</b><span>Vị trí, click, lượt hiển thị của từng từ khóa và từng trang.</span></li>
+        <li><b>Tìm việc đáng làm nhất</b><span>Tụt click, CTR thấp, sắp vào top 10, lên sai trang, chưa có trên Google, trang chậm...</span></li>
+        <li><b>AI đề xuất và chấm điểm</b><span>3 phương án, AI thứ hai chấm. Không chắc thì không làm.</span></li>
+        <li><b>Sửa an toàn, viết bài, đăng Fanpage</b><span>Chỉ sửa phần an toàn, lưu bản cũ trước khi sửa.</span></li>
+        <li><b>Báo cáo và đo lại sau 28 ngày</b><span>Giữ cái tốt, tự trả lại cái làm giảm click.</span></li>
+      </ol>
+    </div>
+    <div class="shot"><img src="anh/ai-da-lam.jpg" alt="Mục AI đã làm: mỗi thay đổi hiện bản trước, bản sau, điểm AI chấm và kết quả sau 28 ngày" width="1360" height="860" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ TÍNH NĂNG ============ -->
+<section id="tinh-nang">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Tính năng đầy đủ</div>
+      <h2>Tất cả công việc SEO trong một phần mềm</h2>
+      <p class="lead">Từ phân tích, tối ưu, nội dung đến mạng xã hội và AI tìm kiếm.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M8 11h6M11 8v6"/></svg></i>Theo dõi và phân tích</h3><ul class="ticks">
+        <li>Vị trí, click, hiển thị, CTR của từng từ khóa</li>
+        <li>Báo khi từ khóa lên sai trang</li>
+        <li>Phát hiện 9 loại vấn đề, xếp theo mức ưu tiên</li>
+        <li>Ước tính số click có thể tăng thêm mỗi tháng</li>
+        <li>Kiểm tra trang đã có trên Google chưa, tốc độ trang</li></ul></div>
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></i>Tối ưu website tự động</h3><ul class="ticks">
+        <li>Viết lại tiêu đề SEO và mô tả hấp dẫn hơn</li>
+        <li>Thêm liên kết nội bộ giữa các bài</li>
+        <li>Điền chữ mô tả ảnh (alt) còn thiếu</li>
+        <li>Thêm hỏi đáp (FAQ) để hiện đẹp trên Google</li>
+        <li>Chạy với WordPress (Yoast, Rank Math, SEOPress)</li></ul></div>
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3"/><path d="m14.5 7.5 3 3"/><path d="M13 20h7"/></svg></i>Nội dung chất lượng</h3><ul class="ticks">
+        <li>Lập kế hoạch bài mới và bài cập nhật mỗi tháng</li>
+        <li>Viết bài có góc nhìn riêng, đúng giọng thương hiệu</li>
+        <li>Trưởng ban biên tập AI chấm điểm và góp ý</li>
+        <li>Soát thông tin, không bịa giá hay số liệu</li>
+        <li>Gợi ý ảnh minh họa và chữ alt cho từng bài</li></ul></div>
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h2.5L13 19V5L7.5 9H5a1 1 0 0 0-1 1z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a7.5 7.5 0 0 1 0 11"/></svg></i>Fanpage, YouTube, video</h3><ul class="ticks">
+        <li>Lịch đăng Fanpage tăng dần, tránh spam</li>
+        <li>Bài dẫn link có gắn mã đo lượt vào website</li>
+        <li>AI xem kho video, gắn chủ đề, chọn video hợp bài</li>
+        <li>Cắt clip dọc 9:16 cho Reels và Shorts</li>
+        <li>Chuẩn bị tiêu đề, mô tả video YouTube</li></ul></div>
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/><path d="M12 8l1 2.2 2.2 1-2.2 1L12 14.4l-1-2.2-2.2-1 2.2-1z"/></svg></i>GEO: được AI trích dẫn</h3><ul class="ticks">
+        <li>Chấm điểm trang có dễ được ChatGPT, Gemini trích dẫn</li>
+        <li>Kiểm tra website có đang được AI nhắc tới không</li>
+        <li>Báo các bot AI đang bị chặn</li>
+        <li>Tạo mẫu file llms.txt cho website</li></ul></div>
+      <div class="card feat"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="8" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="5" rx="1.5"/><rect x="13.5" y="11.5" width="7" height="9" rx="1.5"/><rect x="3.5" y="14.5" width="7" height="6" rx="1.5"/></svg></i>Quản lý dễ dàng</h3><ul class="ticks">
+        <li>Giao diện trực quan trên trình duyệt, cả điện thoại</li>
+        <li>Thêm khách mới chỉ với 3 thông tin</li>
+        <li>Tự soạn tin hướng dẫn khách cấp quyền</li>
+        <li>Dữ liệu nằm trên Google Sheet quen thuộc</li>
+        <li>Quản lý nhiều website trong một chỗ</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIAO DIỆN ============ -->
+<section id="giao-dien" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Dễ thao tác, dễ quản lý</div>
+      <h2>Giao diện rõ ràng, người mới nhìn là hiểu</h2>
+      <p class="lead">Mỗi mục một việc, chữ tiếng Việt dễ hiểu, màu sắc cho biết ngay việc nào tốt, việc nào cần chú ý.</p>
+    </div>
+    <div class="tabs-shots">
+      <div class="shotcard"><figure><div class="shot"><img src="anh/khach-hang.jpg" alt="Mục Khách hàng: ô thêm khách mới và tiến độ cấp quyền của từng khách" width="1360" height="860" loading="lazy"></div>
+        <figcaption><b>Khách hàng</b><span>Điền tên miền, Fanpage, từ khóa rồi bấm Thêm. Có thanh tiến độ và tin nhắn soạn sẵn kèm nút Sao chép.</span></figcaption></figure></div>
+      <div class="shotcard"><figure><div class="shot"><img src="anh/tu-khoa.jpg" alt="Mục Từ khóa: vị trí trên Google, thay đổi so với kỳ trước, click và hiển thị" width="1360" height="860" loading="lazy"></div>
+        <figcaption><b>Từ khóa</b><span>Vị trí từng từ khóa, lên hay xuống bao nhiêu bậc, trang nào đang lên Google.</span></figcaption></figure></div>
+      <div class="shotcard"><figure><div class="shot"><img src="anh/bai-viet.jpg" alt="Mục Bài viết: kế hoạch, điểm biên tập và trạng thái từng bài" width="1360" height="860" loading="lazy"></div>
+        <figcaption><b>Bài viết</b><span>Kế hoạch tháng, điểm biên tập từng bài, bài nào đã hẹn đăng, bài nào để nháp và vì sao.</span></figcaption></figure></div>
+      <div class="shotcard"><figure><div class="shot"><img src="anh/fanpage.jpg" alt="Mục Fanpage và YouTube: lịch đăng và kết quả từng bài" width="1360" height="860" loading="lazy"></div>
+        <figcaption><b>Fanpage &amp; YouTube</b><span>Lịch đăng tự động, nội dung từng bài, lượt xem, tương tác và lượt vào website.</span></figcaption></figure></div>
+    </div>
+
+    <div class="easy">
+      <div>
+        <h3 style="font-size:22px;margin-bottom:6px">Muốn thay đổi? Chỉ vài thao tác</h3>
+        <p style="color:var(--muted);margin-bottom:16px">Không cần biết lập trình, không cần sửa cài đặt phức tạp.</p>
+        <table>
+          <thead><tr><th>Anh/chị muốn</th><th>Làm thế nào</th></tr></thead>
+          <tbody>
+            <tr><td>Thêm khách hoặc website mới</td><td>Mục <b>Khách hàng</b> → điền 3 ô → bấm <span class="kbd">Thêm khách</span></td></tr>
+            <tr><td>Thêm hoặc đổi từ khóa</td><td>Thêm một dòng ở trang <b>Từ khóa</b> trong Google Sheet</td></tr>
+            <tr><td>Không cho sửa một trang</td><td>Ghi đường dẫn trang vào cột <b>Trang không tự sửa</b></td></tr>
+            <tr><td>Muốn tự duyệt trước khi sửa</td><td>Ghi <b>không</b> ở cột <b>Tự động hoàn toàn</b> của website đó</td></tr>
+            <tr><td>Chạy ngay, không chờ tới đêm</td><td>Bấm <span class="kbd">Chạy ngay</span> trên giao diện</td></tr>
+            <tr><td>Xem AI đã sửa gì</td><td>Mục <b>AI đã làm</b>: có bản trước, bản sau, điểm chấm</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="phone"><img src="anh/dien-thoai.jpg" alt="Giao diện SEOtukhoa Studio trên điện thoại" width="390" height="780" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AN TOÀN ============ -->
+<section id="an-toan" class="safe">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">An toàn cho website</div>
+      <h2>Tự động nhưng có chốt chặn, không bao giờ “làm cho xong”</h2>
+      <p class="lead">Việc nào không chắc, phần mềm không làm. Mọi thay đổi đều minh bạch và trả lại được.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6.2L4.6 18.4A1.8 1.8 0 0 0 6.2 21h11.6a1.8 1.8 0 0 0 1.6-2.6L14 9.2V3"/><path d="M7.3 15h9.4"/></svg></div><h3>14 ngày chạy thử</h3><p>Hai tuần đầu chỉ ghi lại việc sẽ làm, chưa sửa thật, chưa tự đăng bài.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 10v3.5l2.5 2M10 2.5h4M18.5 6.5l1.5-1.5"/></svg></div><h3>Sửa chậm mà chắc</h3><p>Tối đa 5 trang mỗi ngày. Một trang đã sửa phải chờ 28 ngày mới sửa tiếp.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/><path d="M12 14.5v2.5"/></svg></div><h3>Không đụng phần quan trọng</h3><p>Không sửa nội dung chính, giá, thông tin pháp lý, đường dẫn, không xóa trang. Trang chủ và trang bán hàng chính để người làm.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></div><h3>Tự trả lại bản cũ</h3><p>Lưu bản cũ trước mỗi lần sửa. Click giảm hơn 20% sau 28 ngày thì tự trả lại.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 8.4a4.9 4.9 0 0 0-8.4-3.1 4.9 4.9 0 0 0-8.4 3.1C3.6 14 12 19.6 12 19.6s8.4-5.6 8.4-11.2z"/><path d="M3.8 11.5h4.4l1.8-2.8 3 5.6 1.8-2.8h5.4"/></svg></div><h3>Chủ đề nhạy cảm để nháp</h3><p>Y tế, thuốc, pháp luật, đầu tư, vay, bảo hiểm, thuế: bài luôn để nháp cho người có chuyên môn đọc.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5"/><path d="m9 14.5 2 2 4-4"/></svg></div><h3>Không bịa thông tin</h3><p>Bài chỉ dùng thông tin có thật của doanh nghiệp. Thiếu thông tin hoặc nghi sai thì không đăng.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg></div><h3>Không traffic ảo</h3><p>Không click giả, không proxy, không tài khoản ảo, không đăng vào nhóm Facebook. Chỉ dùng kết nối chính thức.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9.5a6 6 0 0 1 12 0c0 5.5 2.5 7.5 2.5 7.5h-17S6 15 6 9.5z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div><h3>Báo mọi thay đổi</h3><p>Mỗi thay đổi đều được báo qua Telegram và ghi lại đầy đủ để kiểm tra.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SO SÁNH ============ -->
+<section id="so-sanh">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">So sánh</div>
+      <h2>So với mua traffic ảo hay tự làm SEO thủ công</h2>
+    </div>
+    <div class="cmp">
+      <div class="card bad"><h3>✕ Tool traffic ảo, click giả</h3><ul>
+        <li>Vi phạm chính sách của Google, dễ bị phạt</li>
+        <li>Số liệu đẹp nhưng không có khách thật</li>
+        <li>Ngừng chạy là thứ hạng rơi</li>
+        <li>Cần proxy, tài khoản ảo, rủi ro lộ thông tin</li></ul></div>
+      <div class="card bad"><h3>✕ Tự làm SEO thủ công</h3><ul>
+        <li>Mất nhiều giờ mỗi tuần cho việc lặp lại</li>
+        <li>Cần người hiểu SEO, khó tìm, khó giữ</li>
+        <li>Khó biết thay đổi nào có hiệu quả</li>
+        <li>Nhiều website thì quá tải</li></ul></div>
+      <div class="card good"><h3>✓ SEOtukhoa Studio</h3><ul>
+        <li>Chỉ dùng kết nối chính thức của Google, Facebook</li>
+        <li>Làm việc mỗi đêm, không bỏ sót ngày nào</li>
+        <li>Không cần biết SEO, chỉ cần 3 thông tin</li>
+        <li>Mọi thay đổi có bản trước/sau và kết quả đo lại</li>
+        <li>Tự trả lại khi kết quả xấu đi</li>
+        <li>Quản lý nhiều website trên một giao diện</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHÙ HỢP ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Phù hợp với</div>
+      <h2>Doanh nghiệp có website và muốn khách tìm thấy trên Google</h2>
+    </div>
+    <div class="chips">
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Spa, thẩm mỹ</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Nha khoa</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Nội thất</span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Kế toán, dịch vụ doanh nghiệp</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Cửa hàng online</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Nhà hàng, quán ăn</span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Trung tâm đào tạo</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Bất động sản</span><span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Dịch vụ sửa chữa</span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Công ty, nhà máy</span>
+    </div>
+    <p class="lead" style="margin-top:18px">Ngành y tế, tài chính, pháp luật vẫn dùng được đầy đủ phần theo dõi và tối ưu; riêng bài viết luôn để nháp cho người có chuyên môn đọc trước khi đăng.</p>
+  </div>
+</section>
+
+<!-- ============ BẮT ĐẦU ============ -->
+<section id="bat-dau">
+  <div class="wrap">
+    <div class="head" style="text-align:center">
+      <div class="eyebrow">Đăng ký</div>
+      <h2>3 bước, bắt đầu ngay hôm nay</h2>
+      <p class="lead" style="margin:10px auto 0">Người mới cũng làm được. Mất khoảng 10 phút, chỉ làm một lần.</p>
+    </div>
+    <div class="steps" style="margin-top:30px">
+      <div class="card step"><div class="num">1</div><h3>Gửi 3 thông tin</h3><p>Tên miền website, link Fanpage Facebook và các từ khóa muốn lên top Google.</p></div>
+      <div class="card step"><div class="num">2</div><h3>Cấp quyền một lần</h3><p>Làm theo tin nhắn soạn sẵn, khoảng 5 phút: Search Console, WordPress, Fanpage. Hướng dẫn chi tiết ở <a href="#hdsd">phần bên dưới</a>.</p></div>
+      <div class="card step"><div class="num">3</div><h3>Nhận báo cáo mỗi sáng</h3><p>Phần mềm tự chạy mỗi đêm. Anh/chị đọc tin Telegram hoặc mở giao diện để xem kết quả.</p></div>
+    </div>
+    <div class="cta-box" id="lien-he">
+      <div>
+        <h3 style="font-size:22px">Sẵn sàng đưa website lên top?</h3>
+        <p>Nhắn Zalo <span class="fill">[số Zalo]</span> hoặc gọi <span class="fill">[số điện thoại]</span> để được tư vấn và cài đặt.</p>
+      </div>
+      <a class="btn btn-gold" href="#lien-he"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg> Nhắn Zalo tư vấn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HƯỚNG DẪN SỬ DỤNG ============ -->
+<section id="hdsd" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Hướng dẫn sử dụng</div>
+      <h2>Hướng dẫn từng bước, ai cũng làm được</h2>
+      <p class="lead">Phần A dành cho khách hàng (chủ website). Phần B dành cho người vận hành phần mềm.</p>
+    </div>
+    <div class="guide-nav"><a href="#phan-a">A. Khách hàng: cấp quyền</a><a class="light" href="#phan-b">B. Người vận hành: cài đặt và dùng hằng ngày</a><a class="light" href="#trang-thai">Ý nghĩa các trạng thái</a></div>
+
+    <div class="part" id="phan-a">
+      <h3>A. Dành cho khách hàng: cấp quyền một lần</h3>
+      <p>Google và Facebook bắt buộc chủ website tự bấm cấp quyền, để không ai lấy được tài khoản của anh/chị. Anh/chị có thể thu hồi quyền bất cứ lúc nào.</p>
+
+      <details open><summary><span class="n">1</span>Google Search Console (bắt buộc)</summary><div class="body">
+        <ol>
+          <li>Mở <b>search.google.com/search-console</b> và chọn website của anh/chị ở góc trên bên trái.</li>
+          <li>Bấm <b>Cài đặt</b> (cuối menu bên trái) → <b>Người dùng và quyền</b>.</li>
+          <li>Bấm <b>Thêm người dùng</b>, dán email do SEOtukhoa gửi, chọn quyền <b>Đầy đủ</b> → <b>Thêm</b>.</li>
+        </ol>
+        <div class="tip">Website chưa có trong Search Console? Báo SEOtukhoa, bên em hướng dẫn xác minh (thường chỉ cần thêm một bản ghi tên miền hoặc một thẻ vào website).</div>
+      </div></details>
+
+      <details><summary><span class="n">2</span>Google Analytics 4 (nên có)</summary><div class="body">
+        <ol>
+          <li>Mở <b>analytics.google.com</b> → <b>Quản trị</b> (bánh răng góc dưới bên trái).</li>
+          <li>Ở cột Thuộc tính, chọn <b>Quản lý quyền truy cập vào thuộc tính</b>.</li>
+          <li>Bấm <b>+</b> → <b>Thêm người dùng</b>, dán email do SEOtukhoa gửi, chọn vai trò <b>Người xem</b> → <b>Thêm</b>.</li>
+          <li>Gửi lại <b>Mã thuộc tính</b> (dãy số trong <b>Quản trị → Chi tiết thuộc tính</b>).</li>
+        </ol>
+        <div class="tip">Quyền Người xem chỉ đọc được số liệu, không sửa được gì.</div>
+      </div></details>
+
+      <details><summary><span class="n">3</span>WordPress (nếu website dùng WordPress)</summary><div class="body">
+        <ol>
+          <li><b>Cài plugin cầu nối:</b> vào <b>Plugin → Cài mới → Tải plugin lên</b>, chọn file <span class="kbd">seo-insight-bridge.zip</span> do SEOtukhoa gửi → <b>Cài đặt</b> → <b>Kích hoạt</b>.</li>
+          <li><b>Tạo tài khoản riêng:</b> vào <b>Thành viên → Thêm mới</b>, tên đăng nhập <span class="kbd">seo-bot</span>, vai trò <b>Biên tập viên</b>.</li>
+          <li><b>Tạo mật khẩu ứng dụng:</b> đăng nhập bằng tài khoản seo-bot, vào <b>Hồ sơ</b>, kéo xuống mục <b>Mật khẩu ứng dụng</b>, đặt tên <i>SEOtukhoa Studio</i> → <b>Thêm mật khẩu ứng dụng mới</b>.</li>
+          <li>Gửi <b>tên đăng nhập</b> và <b>mật khẩu ứng dụng</b> vừa tạo cho SEOtukhoa qua tin nhắn riêng.</li>
+        </ol>
+        <div class="tip">Mật khẩu ứng dụng không dùng để đăng nhập trang quản trị được, và anh/chị xóa nó bất cứ lúc nào để thu hồi quyền.</div>
+        <div class="warn">Không thấy mục Mật khẩu ứng dụng? Website cần chạy https, và một số plugin bảo mật (ví dụ Wordfence) có thể đang tắt tính năng này. Không tự làm được thì cấp tạm tài khoản quản trị để SEOtukhoa làm giúp.</div>
+      </div></details>
+
+      <details><summary><span class="n">4</span>Fanpage Facebook</summary><div class="body">
+        <ol>
+          <li>Mở <b>business.facebook.com/settings</b> (Cài đặt doanh nghiệp của Meta).</li>
+          <li>Vào <b>Người dùng → Đối tác</b> → <b>Thêm</b> → chọn <b>Cấp cho đối tác quyền truy cập vào tài sản</b>.</li>
+          <li>Nhập <b>mã doanh nghiệp (Business ID)</b> do SEOtukhoa gửi.</li>
+          <li>Chọn Fanpage của anh/chị, bật quyền <b>Nội dung</b> và <b>Thông tin chi tiết</b> → <b>Lưu</b>.</li>
+        </ol>
+        <div class="tip">Tên các mục có thể khác đôi chút tùy phiên bản Facebook. Fanpage chưa nằm trong Meta Business thì báo SEOtukhoa để được hướng dẫn thêm.</div>
+      </div></details>
+
+      <details><summary><span class="n">↩</span>Thu hồi quyền khi không dùng nữa</summary><div class="body">
+        <ul>
+          <li><b>Search Console:</b> Cài đặt → Người dùng và quyền → bấm dấu ba chấm cạnh email → Xóa quyền truy cập.</li>
+          <li><b>Google Analytics:</b> Quản lý quyền truy cập → chọn email → Xóa.</li>
+          <li><b>WordPress:</b> xóa mật khẩu ứng dụng hoặc xóa tài khoản seo-bot.</li>
+          <li><b>Facebook:</b> Cài đặt doanh nghiệp → Đối tác → chọn SEOtukhoa → Gỡ.</li>
+        </ul>
+      </div></details>
+    </div>
+
+    <div class="part" id="phan-b">
+      <h3>B. Dành cho người vận hành: cài đặt và dùng hằng ngày</h3>
+      <p>Phần mềm chạy trên một máy tính Windows, mỗi đêm tự làm việc. Người mới làm theo thứ tự dưới đây.</p>
+
+      <details><summary><span class="n">1</span>Cài đặt lần đầu (khoảng 10 phút)</summary><div class="body">
+        <ol>
+          <li>Cài <b>Python 3.11 trở lên</b> từ python.org. Khi cài, tick ô <b>Add python.exe to PATH</b>.</li>
+          <li>Giải nén thư mục phần mềm, ví dụ vào <span class="kbd">D:\seo-insight-studio</span>.</li>
+          <li>Nhấp đúp <span class="kbd">scripts\cai_dat.bat</span> và chờ cài xong.</li>
+          <li>Nhấp đúp <span class="kbd">scripts\chay_demo.bat</span> để xem thử bằng dữ liệu mẫu. Giao diện tự mở trên trình duyệt.</li>
+        </ol>
+        <div class="tip">Bản demo không cần tài khoản nào, dùng để làm quen trước khi chạy thật.</div>
+      </div></details>
+
+      <details><summary><span class="n">2</span>Kết nối tài khoản thật</summary><div class="body">
+        <ol>
+          <li>Tạo tài khoản dịch vụ Google (đọc Search Console, GA4, ghi Google Sheet).</li>
+          <li>Tạo khóa Claude AI và bot Telegram để nhận báo cáo.</li>
+          <li>Điền thông tin vào file <span class="kbd">config.yaml</span> và <span class="kbd">.env</span>, rồi chạy kiểm tra kết nối.</li>
+          <li>Đặt lịch chạy mỗi đêm: mở <b>PowerShell</b> bằng chuột phải → <b>Run as administrator</b>, vào thư mục phần mềm và chạy <span class="kbd">powershell -ExecutionPolicy Bypass -File scripts\cai_dat_lich_chay.ps1</span>. Phần mềm sẽ tự chạy lúc 2 giờ sáng mỗi ngày, kể cả khi máy đang ngủ.</li>
+        </ol>
+        <div class="tip">Từng bước có ảnh và câu chữ cụ thể trong file README đi kèm phần mềm (mục 3 và 4). SEOtukhoa hỗ trợ cài đặt nếu cần.</div>
+      </div></details>
+
+      <details><summary><span class="n">3</span>Thêm khách mới</summary><div class="body">
+        <ol>
+          <li>Nhấp đúp <span class="kbd">scripts\mo_giao_dien.bat</span>, vào mục <b>Khách hàng</b>.</li>
+          <li>Điền tên miền, link Fanpage, từ khóa (mỗi dòng một từ) → <span class="kbd">Thêm khách</span>.</li>
+          <li>Đêm đó phần mềm tự đọc website, lập hồ sơ doanh nghiệp, gắn từ khóa vào đúng trang và kiểm tra quyền.</li>
+          <li>Sáng hôm sau, bấm <span class="kbd">Sao chép</span> tin nhắn hướng dẫn cấp quyền và gửi khách qua Zalo.</li>
+          <li>Khách cấp quyền xong, trạng thái tự chuyển sang <span class="pill p-good">Đang chạy</span>.</li>
+        </ol>
+      </div></details>
+
+      <details><summary><span class="n">4</span>Mỗi ngày làm gì? (khoảng 5 phút)</summary><div class="body">
+        <ul>
+          <li><b>Sáng:</b> đọc tin Telegram hoặc mở giao diện, mục <b>Tổng quan</b>.</li>
+          <li>Xem khung <b>Cần anh/chị chú ý</b>: khách chưa cấp quyền, bài nháp cần bổ sung, việc cần người kỹ thuật làm.</li>
+          <li>Việc ở mục <b>Việc cần người làm</b> (trang chậm, trang chưa có trên Google...) giao cho người kỹ thuật, không phải khách.</li>
+          <li>Mọi thứ khác phần mềm tự làm. Không cần bấm duyệt.</li>
+        </ul>
+        <div class="tip">Giữ cửa sổ đen mở trong lúc xem giao diện. Đóng cửa sổ là tắt giao diện, phần mềm vẫn chạy theo lịch đêm.</div>
+      </div></details>
+
+      <details><summary><span class="n">5</span>Khi gặp lỗi</summary><div class="body">
+        <ul>
+          <li>Tin Telegram báo lỗi kèm hướng dẫn tiếng Việt. Một phần lỗi không làm dừng cả đêm.</li>
+          <li>Báo “không ghi được vào trang tính”: đóng file đang mở bằng Excel rồi thử lại.</li>
+          <li>Báo “chưa có quyền Search Console”: khách chưa cấp quyền, phần mềm vẫn chạy chế độ hạn chế (viết bài, kiểm tra GEO).</li>
+          <li>Cần hỗ trợ: chụp màn hình cửa sổ báo lỗi gửi SEOtukhoa.</li>
+        </ul>
+      </div></details>
+    </div>
+
+    <div class="part" id="trang-thai">
+      <h3>Ý nghĩa các trạng thái</h3>
+      <p>Mỗi việc trên giao diện có một nhãn màu. Xanh là tốt, vàng là đang chờ, đỏ là cần xem.</p>
+      <table class="status">
+        <thead><tr><th>Trạng thái</th><th>Nghĩa là</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill p-info">Mới</span></td><td>Khách vừa thêm, phần mềm sẽ xử lý trong lượt chạy kế tiếp.</td></tr>
+          <tr><td><span class="pill p-warn">Chờ cấp quyền</span></td><td>Đang chờ khách cấp quyền. Tin nhắn hướng dẫn đã soạn sẵn.</td></tr>
+          <tr><td><span class="pill p-good">Đang chạy</span></td><td>Đủ quyền, phần mềm làm việc mỗi đêm.</td></tr>
+          <tr><td><span class="pill p-warn">Chạy thử</span></td><td>Trong 14 ngày đầu: chỉ ghi lại việc sẽ làm, chưa sửa thật.</td></tr>
+          <tr><td><span class="pill p-good">Đã sửa</span></td><td>AI đã sửa trên website, đang chờ đủ 28 ngày để đo kết quả.</td></tr>
+          <tr><td><span class="pill p-good">Giữ lại</span></td><td>Đo sau 28 ngày thấy tốt, giữ thay đổi.</td></tr>
+          <tr><td><span class="pill p-bad">Đã hoàn tác</span></td><td>Click giảm hơn 20%, phần mềm đã tự trả lại bản cũ.</td></tr>
+          <tr><td><span class="pill p-idle">Không chắc nên không sửa</span></td><td>AI chưa đủ chắc chắn nên bỏ qua. Đây là chốt an toàn, không phải lỗi.</td></tr>
+          <tr><td><span class="pill p-info">Chờ viết</span></td><td>Bài trong kế hoạch. Nếu có ghi chú “chờ: ...” là chưa đủ điều kiện, phần mềm tự thử lại các đêm sau.</td></tr>
+          <tr><td><span class="pill p-warn">Đã có nháp</span></td><td>Bài đã viết nhưng để nháp; cột ghi chú nêu lý do (chạy thử, chủ đề nhạy cảm, thiếu thông tin...).</td></tr>
+          <tr><td><span class="pill p-good">Đã hẹn đăng</span></td><td>Bài đạt mọi kiểm tra, đã hẹn giờ tự đăng trên website.</td></tr>
+          <tr><td><span class="pill p-bad">Cần người kiểm tra</span></td><td>Có việc phần mềm không tự xử lý được (ví dụ không đo được kết quả quá lâu).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HỎI ĐÁP ============ -->
+<section id="hoi-dap" class="faq">
+  <div class="wrap" style="max-width:880px">
+    <div class="head" style="text-align:center">
+      <div class="eyebrow">Hỏi đáp</div>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <details><summary>Tôi không biết gì về SEO, có dùng được không?</summary><div class="body">Được. Anh/chị chỉ cần gửi tên miền, link Fanpage, từ khóa và cấp quyền một lần theo hướng dẫn. Phần mềm tự làm các việc còn lại và báo kết quả bằng tiếng Việt dễ hiểu.</div></details>
+    <details><summary>Phần mềm có làm hỏng website của tôi không?</summary><div class="body">Phần mềm chỉ sửa những phần an toàn (tiêu đề SEO, mô tả, liên kết nội bộ, chữ mô tả ảnh, hỏi đáp), không sửa nội dung chính, giá, thông tin pháp lý hay đường dẫn, không xóa trang. Mọi thay đổi đều lưu bản cũ; kết quả xấu đi thì tự trả lại.</div></details>
+    <details><summary>Có phải duyệt từng việc không?</summary><div class="body">Không bắt buộc. Mặc định phần mềm tự làm những việc đủ chắc chắn và bỏ qua việc không chắc. Nếu muốn tự duyệt trước, chỉ cần ghi “không” ở cột “Tự động hoàn toàn” của website đó.</div></details>
+    <details><summary>Bài viết do AI viết có bị Google phạt không?</summary><div class="body">Google không phạt nội dung vì do AI viết, mà phạt nội dung kém chất lượng, sản xuất hàng loạt. Vì vậy mỗi website tối đa 12 bài mỗi tháng, cách nhau ít nhất 2 ngày, có biên tập, soát thông tin, và chỉ đăng bài đạt từ 8/10 điểm.</div></details>
+    <details><summary>Có cam kết lên top 1 không?</summary><div class="body">Không ai có thể cam kết thứ hạng Google một cách trung thực, vì Google tự quyết định thứ hạng. SEOtukhoa Studio cam kết làm đúng cách, đều đặn và minh bạch: mọi thay đổi đều được đo lại bằng số liệu thật sau 28 ngày.</div></details>
+    <details><summary>Bao lâu thì thấy kết quả?</summary><div class="body">Thường cần vài tuần đến vài tháng, tùy mức cạnh tranh của từ khóa và tình trạng website. 14 ngày đầu là giai đoạn chạy thử; mỗi thay đổi được đo lại sau 28 ngày.</div></details>
+    <details><summary>Website không dùng WordPress thì sao?</summary><div class="body">Vẫn dùng được phần theo dõi từ khóa, phân tích, viết bài (xuất file để đăng), kiểm tra GEO và Fanpage. Riêng việc tự sửa trên website hiện chỉ hỗ trợ WordPress.</div></details>
+    <details><summary>Chưa có Fanpage có dùng được không?</summary><div class="body">Được. Phần Fanpage chỉ chạy khi có Fanpage và đã cấp quyền. Các phần còn lại vẫn chạy bình thường.</div></details>
+    <details><summary>Thông tin tài khoản của tôi có an toàn không?</summary><div class="body">Phần mềm không cần mật khẩu chính của anh/chị. Google và Facebook dùng cách cấp quyền riêng, WordPress dùng mật khẩu ứng dụng riêng; anh/chị thu hồi được bất cứ lúc nào. Các khóa kết nối chỉ lưu trên máy chạy phần mềm.</div></details>
+    <details><summary>Phần mềm có tạo lượt truy cập ảo không?</summary><div class="body">Không. SEOtukhoa Studio không tạo click giả, không dùng proxy, không tạo tài khoản ảo, không đăng vào nhóm Facebook. Đó là những cách vi phạm chính sách và có thể khiến website bị phạt.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="margin-bottom:4px"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg-bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a5fd0"/><stop offset=".55" stop-color="#1f3370"/><stop offset="1" stop-color="#0b1533"/></linearGradient><linearGradient id="lg-au2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ffd36b"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg-bg2)"/><rect x="0.5" y="0.5" width="39" height="39" rx="10.5" fill="none" stroke="#fff" stroke-opacity=".16"/><rect x="9" y="23" width="5" height="8" rx="1.6" fill="#fff" fill-opacity=".55"/><rect x="17.5" y="18" width="5" height="13" rx="1.6" fill="#fff" fill-opacity=".8"/><rect x="26" y="12" width="5" height="19" rx="1.6" fill="url(#lg-au2)"/><path d="M8.5 17.5 15.5 12l4.5 3 8.5-7" fill="none" stroke="url(#lg-au2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.8 8h3.9v3.9" fill="none" stroke="url(#lg-au2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SEO<b>tukhoa</b> Studio</span></div>
+      <p>Phần mềm SEO bằng AI, chỉ dùng kết nối chính thức của Google và Facebook. Không tạo lượt truy cập ảo. Thứ hạng trên Google do Google quyết định; phần mềm giúp website tốt hơn theo đúng hướng dẫn của Google.</p>
+    </div>
+    <div>
+      <b>Liên hệ</b>
+      <p>Zalo: <span class="fill">[số Zalo]</span><br>Email: <span class="fill">[email]</span></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
