@@ -279,6 +279,27 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .browser { transform: none; }
 }
 
+/* Vì sao phải lên top */
+.why { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.serp { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px; box-shadow: 0 30px 60px rgba(11,21,51,.14); }
+.sbox { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 99px; border: 1px solid #dfe1e5; box-shadow: 0 1px 6px rgba(32,33,36,.18); font-size: 16px; color: #202124; margin-bottom: 16px; }
+.sbox svg { width: 20px; height: 20px; color: #4285f4; flex: none; }
+.tier { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; margin-top: 10px; font-size: 15px; color: #34405e; }
+.tier .rk { flex: none; width: 96px; text-align: center; padding: 7px 0; border-radius: 10px; font-weight: 900; font-size: 14px; }
+.tier b { color: var(--navy); font-size: 17px; }
+.tier.t1 { background: linear-gradient(90deg, var(--gold-soft), #fff); border: 2px solid var(--gold); }
+.tier.t1 .rk { background: linear-gradient(135deg, #ffd36b, var(--gold2)); color: #2a1a00; }
+.tier.t3 { background: #fff8e6; border: 1px solid #ffe2a1; margin-right: 4%; }
+.tier.t3 .rk { background: var(--gold); color: #2a1a00; }
+.tier.t10 { background: #eef2fb; border: 1px solid var(--line); margin-right: 8%; }
+.tier.t10 .rk { background: var(--navy3); color: #fff; }
+.tier.tx { background: #f4f5f8; border: 1px dashed #c9cfdc; margin-right: 12%; color: #7a8399; }
+.tier.tx .rk { background: #c9cfdc; color: #4b5568; }
+.tier.tx b { color: var(--red); }
+.whytxt h3 { font-size: 26px; line-height: 1.25; }
+.whytxt h3 em { font-style: normal; color: var(--red); }
+.whytxt > p { color: var(--muted); font-size: 17px; margin-top: 12px; }
+
 /* Để nguyên hay bắt đầu */
 .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
 .choice ul { list-style: none; padding: 0; margin: 14px 0 0; }
@@ -310,7 +331,7 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
 
 /* ---------- Màn hình nhỏ ---------- */
 @media (max-width: 1020px) {
-  .hero .wrap, .row, .cta-band, .guide { grid-template-columns: 1fr; }
+  .hero .wrap, .row, .cta-band, .guide, .why { grid-template-columns: 1fr; }
   .row.rev .txt { order: 0; }
   .g3, .g4, .cmp, .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .promise { flex-wrap: wrap; }
@@ -333,6 +354,8 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .rows { gap: 56px; }
   .g2, .g3, .g4, .cmp, .steps, .choice, .journey, .objs { grid-template-columns: 1fr; }
   .promise { flex-direction: column; align-items: flex-start; }
+  .tier { flex-direction: column; align-items: flex-start; gap: 8px; margin-right: 0 !important; }
+  .whytxt h3 { font-size: 22px; }
   .promise .btn { width: 100%; }
   .steps::before { display: none; }
   .float.f1 { position: relative; left: 0; bottom: 0; width: auto; margin-top: 14px; }
