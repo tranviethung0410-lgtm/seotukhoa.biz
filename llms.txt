@@ -1,0 +1,11 @@
+# SEOtukhoa Studio
+
+> Phần mềm SEO từ khóa bằng AI cho doanh nghiệp Việt Nam. Đọc số liệu thật từ Google Search Console, tự tối ưu tiêu đề, mô tả, liên kết nội bộ, alt ảnh, FAQ trên WordPress, viết bài có kiểm tra sự thật, lên lịch Fanpage và YouTube, đo lại sau 28 ngày và tự hoàn tác khi kết quả xấu. Không tạo lượt truy cập ảo.
+
+## Trang chính
+- [Giới thiệu phần mềm](https://seotukhoa.biz/): tính năng, cách hoạt động, chốt an toàn, so sánh, câu hỏi thường gặp
+- [Hướng dẫn sử dụng](https://seotukhoa.biz/hdsd/): cấp quyền Search Console, Google Analytics, WordPress, Fanpage; cài đặt và vận hành
+
+## Liên hệ
+- Zalo / điện thoại: 0842 945 555
+- Email: lienhe@seotukhoa.biz
