@@ -159,7 +159,7 @@ section { padding: 88px 0; scroll-margin-top: 70px; }
 .row.rev .txt { order: 2; }
 .row .txt h3 { font-size: 28px; font-weight: 900; line-height: 1.25; margin: 6px 0 12px; }
 .row .txt > p { color: var(--muted); font-size: 17px; }
-.chipnum { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 12px; background: var(--gold-soft); color: #8a5200; font-weight: 900; }
+.chipnum { display: block; font-size: 28px; font-weight: 900; line-height: 1.25; letter-spacing: -.01em; background: linear-gradient(90deg, var(--gold2), var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .ticks { list-style: none; padding: 0; margin: 18px 0 0; }
 .ticks li { position: relative; padding-left: 32px; margin: 11px 0; color: #34405e; font-size: 16px; }
 .ticks li::before { content: ""; position: absolute; left: 0; top: 2px; width: 22px; height: 22px; border-radius: 50%; background: var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312a061' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat; }
@@ -208,10 +208,9 @@ section { padding: 88px 0; scroll-margin-top: 70px; }
 
 /* Bước */
 .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; position: relative; }
-.steps::before { content: ""; position: absolute; top: 26px; left: 16%; right: 16%; height: 3px; background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 18px); z-index: 0; }
 .step { position: relative; z-index: 1; text-align: center; padding: 0 10px; }
-.step .num { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 18px; background: linear-gradient(135deg, #ffd36b, var(--gold2)); color: #2a1a00; display: grid; place-items: center; font-weight: 900; font-size: 22px; box-shadow: 0 10px 24px rgba(255,159,28,.4), 0 0 0 8px var(--bg); }
-.alt .step .num { box-shadow: 0 10px 24px rgba(255,159,28,.4), 0 0 0 8px #fff; }
+.step .num { font-size: 22px; font-weight: 900; line-height: 1.3; margin-bottom: 4px; background: linear-gradient(90deg, var(--gold2), var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.step h3 { font-size: 22px; }
 .step p { color: var(--muted); margin-top: 8px; }
 
 /* Khung kêu gọi lớn */
@@ -230,7 +229,7 @@ details { background: #fff; border: 1px solid var(--line); border-radius: 16px; 
 details[open] { box-shadow: var(--shadow); }
 summary { cursor: pointer; list-style: none; padding: 19px 22px; font-weight: 800; font-size: 16.5px; display: flex; align-items: center; gap: 12px; }
 summary::-webkit-details-marker { display: none; }
-summary .n { width: 32px; height: 32px; border-radius: 10px; background: var(--gold-soft); color: #8a5200; display: grid; place-items: center; flex: none; font-size: 15px; font-weight: 900; }
+summary .n { flex: none; font-size: inherit; font-weight: 900; background: linear-gradient(90deg, var(--gold2), var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 summary::after { content: "+"; margin-left: auto; font-size: 24px; font-weight: 600; color: var(--muted); transition: transform .2s; }
 details[open] summary::after { transform: rotate(45deg); }
 .body { padding: 0 22px 20px 22px; color: #34405e; font-size: 15.5px; }
@@ -367,7 +366,7 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   h2, .cta-band h2, .eyebrow, .cta-band .eyebrow { font-size: 26px; }
   .page-hero h1 { font-size: 30px; }
   .lead { font-size: 16px; }
-  .row .txt h3 { font-size: 22px; }
+  .row .txt h3, .chipnum { font-size: 22px; }
   .rows { gap: 56px; }
   .g2, .g3, .g4, .cmp, .steps, .choice, .journey, .objs { grid-template-columns: 1fr; }
   .promise, .bridge { flex-direction: column; align-items: flex-start; }
@@ -390,7 +389,6 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .brand-card .bi svg { width: 21px; height: 21px; }
   .brand-card b { font-size: 13.5px; }
   .brand-card small { font-size: 11.5px; }
-  .steps::before { display: none; }
   .float.f1 { position: relative; left: 0; bottom: 0; width: auto; margin-top: 14px; }
   .float.f2 { display: none; }
   .topbar .btn { display: none; }
