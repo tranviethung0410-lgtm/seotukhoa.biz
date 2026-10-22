@@ -19,8 +19,9 @@ h1, h2, h3 { margin: 0; letter-spacing: -.018em; }
 h2 { font-size: 38px; font-weight: 900; line-height: 1.18; }
 h3 { font-size: 18px; font-weight: 800; line-height: 1.3; }
 p { margin: 0; }
-.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-.eyebrow::before { content: ""; width: 22px; height: 3px; border-radius: 3px; background: currentColor; }
+/* Dòng câu hỏi trên tiêu đề: không gạch, cỡ chữ bằng tiêu đề bên dưới */
+.eyebrow { display: flex; align-items: center; font-size: 38px; font-weight: 900; line-height: 1.18; letter-spacing: -.01em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+.cta-band .eyebrow { font-size: 36px; }
 .center { text-align: center; }
 .center .eyebrow { justify-content: center; }
 .lead { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 760px; }
@@ -349,7 +350,7 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .hero h1 { font-size: 30px; }
   .tag { font-size: 11.5px; }
   .hero .sub { font-size: 16.5px; }
-  h2, .cta-band h2 { font-size: 26px; }
+  h2, .cta-band h2, .eyebrow, .cta-band .eyebrow { font-size: 26px; }
   .page-hero h1 { font-size: 30px; }
   .lead { font-size: 16px; }
   .row .txt h3 { font-size: 22px; }
