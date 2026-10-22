@@ -81,7 +81,7 @@
 <li><b>WordPress:</b> xóa mật khẩu ứng dụng hoặc xóa tài khoản seo-bot.</li>
 <li><b>Facebook:</b> Cài đặt doanh nghiệp → Đối tác → chọn SEOtukhoa → Gỡ.</li></ul></div></details></div>
   <div class="part" id="phan-b"><h2>B. Dành cho người vận hành: cài đặt và dùng hằng ngày</h2>
-    <p>Phần mềm chạy trên một máy tính Windows, mỗi đêm tự làm việc. Người mới làm theo thứ tự dưới đây.</p>
+    <p>Phần mềm chạy trên một máy tính Windows, tự làm việc theo lịch mỗi ngày. Người mới làm theo thứ tự dưới đây.</p>
     <details open><summary><span class="n">1</span>Cài đặt lần đầu (khoảng 10 phút)</summary><div class="body indent"><ol>
 <li>Cài <b>Python 3.11 trở lên</b> từ python.org. Khi cài, tick ô <b>Add python.exe to PATH</b>.</li>
 <li>Giải nén thư mục phần mềm, ví dụ vào <span class="kbd">D:\seo-insight-studio</span>.</li>
@@ -89,7 +89,7 @@
 <li>Nhấp đúp <span class="kbd">scripts\chay_demo.bat</span> để xem thử bằng dữ liệu mẫu. Giao diện tự mở trên trình duyệt.</li></ol>
 <div class="tip">Bản demo không cần tài khoản nào, dùng để làm quen trước khi chạy thật.</div></div></details><details><summary><span class="n">2</span>Kết nối tài khoản thật</summary><div class="body indent"><ol>
 <li>Tạo tài khoản dịch vụ Google (đọc Search Console, GA4, ghi Google Sheet).</li>
-<li>Tạo khóa Claude AI và bot Telegram để nhận báo cáo.</li>
+<li>Tạo khóa Claude và bot Telegram để nhận báo cáo.</li>
 <li>Điền thông tin vào file <span class="kbd">config.yaml</span> và <span class="kbd">.env</span>, rồi chạy kiểm tra kết nối.</li>
 <li>Đặt lịch chạy mỗi đêm: mở <b>PowerShell</b> bằng chuột phải → <b>Run as administrator</b>, vào thư mục phần mềm và chạy <span class="kbd">powershell -ExecutionPolicy Bypass -File scripts\cai_dat_lich_chay.ps1</span>.</li></ol>
 <div class="tip">Từng bước có câu chữ cụ thể trong file README đi kèm phần mềm (mục 3 và 4). SEOtukhoa hỗ trợ cài đặt nếu cần.</div></div></details><details><summary><span class="n">3</span>Thêm khách mới</summary><div class="body indent"><ol>
@@ -108,14 +108,14 @@
 <tr><td>Không cho sửa một trang</td><td>Ghi đường dẫn trang vào cột <b>Trang không tự sửa</b></td></tr>
 <tr><td>Muốn tự duyệt trước khi sửa</td><td>Ghi <b>không</b> ở cột <b>Tự động hoàn toàn</b> của website đó</td></tr>
 <tr><td>Chạy ngay, không chờ tới đêm</td><td>Bấm <span class="kbd">Chạy ngay</span> trên giao diện</td></tr>
-<tr><td>Xem AI đã sửa gì</td><td>Mục <b>AI đã làm</b>: có bản trước, bản sau, điểm chấm</td></tr></tbody></table></div></details><details><summary><span class="n">6</span>Khi gặp lỗi</summary><div class="body indent"><ul>
+<tr><td>Xem phần mềm đã sửa gì</td><td>Mục <b>Đã tự sửa</b>: có bản trước, bản sau, điểm chấm</td></tr></tbody></table></div></details><details><summary><span class="n">6</span>Khi gặp lỗi</summary><div class="body indent"><ul>
 <li>Tin Telegram báo lỗi kèm hướng dẫn tiếng Việt. Một phần lỗi không làm dừng cả đêm.</li>
 <li>Báo “không ghi được vào trang tính”: đóng file đang mở bằng Excel rồi thử lại.</li>
 <li>Báo “chưa có quyền Search Console”: khách chưa cấp quyền, phần mềm vẫn chạy chế độ hạn chế (viết bài, kiểm tra GEO).</li>
 <li>Cần hỗ trợ: chụp màn hình cửa sổ báo lỗi gửi Zalo <b>0842 945 555</b>.</li></ul></div></details></div>
   <div class="part" id="trang-thai"><h2>C. Ý nghĩa các trạng thái</h2>
     <p>Mỗi việc trên giao diện có một nhãn màu. Xanh là tốt, vàng là đang chờ, đỏ là cần xem.</p>
-    <table><thead><tr><th>Trạng thái</th><th>Nghĩa là</th></tr></thead><tbody><tr><td><span class="pill p-info">Mới</span></td><td>Khách vừa thêm, phần mềm sẽ xử lý trong lượt chạy kế tiếp.</td></tr><tr><td><span class="pill p-warn">Chờ cấp quyền</span></td><td>Đang chờ khách cấp quyền. Tin nhắn hướng dẫn đã soạn sẵn.</td></tr><tr><td><span class="pill p-good">Đang chạy</span></td><td>Đủ quyền, phần mềm làm việc mỗi đêm.</td></tr><tr><td><span class="pill p-warn">Chạy thử</span></td><td>Trong 14 ngày đầu: chỉ ghi lại việc sẽ làm, chưa sửa thật.</td></tr><tr><td><span class="pill p-good">Đã sửa</span></td><td>AI đã sửa trên website, đang chờ đủ 28 ngày để đo kết quả.</td></tr><tr><td><span class="pill p-good">Giữ lại</span></td><td>Đo sau 28 ngày thấy tốt, giữ thay đổi.</td></tr><tr><td><span class="pill p-bad">Đã hoàn tác</span></td><td>Click giảm hơn 20%, phần mềm đã tự trả lại bản cũ.</td></tr><tr><td><span class="pill p-idle">Không chắc nên không sửa</span></td><td>AI chưa đủ chắc chắn nên bỏ qua. Đây là chốt an toàn, không phải lỗi.</td></tr><tr><td><span class="pill p-info">Chờ viết</span></td><td>Bài trong kế hoạch. Có ghi chú “chờ: ...” là chưa đủ điều kiện, phần mềm tự thử lại các đêm sau.</td></tr><tr><td><span class="pill p-warn">Đã có nháp</span></td><td>Bài đã viết nhưng để nháp; cột ghi chú nêu lý do (chạy thử, chủ đề nhạy cảm, thiếu thông tin...).</td></tr><tr><td><span class="pill p-good">Đã hẹn đăng</span></td><td>Bài đạt mọi kiểm tra, đã hẹn giờ tự đăng trên website.</td></tr><tr><td><span class="pill p-bad">Cần người kiểm tra</span></td><td>Có việc phần mềm không tự xử lý được (ví dụ không đo được kết quả quá lâu).</td></tr></tbody></table></div>
+    <table><thead><tr><th>Trạng thái</th><th>Nghĩa là</th></tr></thead><tbody><tr><td><span class="pill p-info">Mới</span></td><td>Khách vừa thêm, phần mềm sẽ xử lý trong lượt chạy kế tiếp.</td></tr><tr><td><span class="pill p-warn">Chờ cấp quyền</span></td><td>Đang chờ khách cấp quyền. Tin nhắn hướng dẫn đã soạn sẵn.</td></tr><tr><td><span class="pill p-good">Đang chạy</span></td><td>Đủ quyền, phần mềm làm việc mỗi ngày.</td></tr><tr><td><span class="pill p-warn">Chạy thử</span></td><td>Trong 14 ngày đầu: chỉ ghi lại việc sẽ làm, chưa sửa thật.</td></tr><tr><td><span class="pill p-good">Đã sửa</span></td><td>Phần mềm đã sửa trên website, đang chờ đủ 28 ngày để đo kết quả.</td></tr><tr><td><span class="pill p-good">Giữ lại</span></td><td>Đo sau 28 ngày thấy tốt, giữ thay đổi.</td></tr><tr><td><span class="pill p-bad">Đã hoàn tác</span></td><td>Click giảm hơn 20%, phần mềm đã tự trả lại bản cũ.</td></tr><tr><td><span class="pill p-idle">Không chắc nên không sửa</span></td><td>Phần mềm chưa đủ chắc chắn nên bỏ qua. Đây là chốt an toàn, không phải lỗi.</td></tr><tr><td><span class="pill p-info">Chờ viết</span></td><td>Bài trong kế hoạch. Có ghi chú “chờ: ...” là chưa đủ điều kiện, phần mềm tự thử lại các đêm sau.</td></tr><tr><td><span class="pill p-warn">Đã có nháp</span></td><td>Bài đã viết nhưng để nháp; cột ghi chú nêu lý do (chạy thử, chủ đề nhạy cảm, thiếu thông tin...).</td></tr><tr><td><span class="pill p-good">Đã hẹn đăng</span></td><td>Bài đạt mọi kiểm tra, đã hẹn giờ tự đăng trên website.</td></tr><tr><td><span class="pill p-bad">Cần người kiểm tra</span></td><td>Có việc phần mềm không tự xử lý được (ví dụ không đo được kết quả quá lâu).</td></tr></tbody></table></div>
   <div class="part" id="hoi-dap"><h2>D. Hỏi đáp</h2><details class="reveal"><summary>Cấp quyền Search Console chọn quyền gì?</summary><div class="body">Chọn quyền “Đầy đủ”. Quyền này cho phép đọc số liệu, kiểm tra trang đã có trên Google và gửi lại sơ đồ trang (sitemap). Phần mềm không xóa website hay đổi chủ sở hữu.</div></details><details class="reveal"><summary>Tôi có phải đưa mật khẩu WordPress không?</summary><div class="body">Không cần mật khẩu chính. Anh/chị tạo một tài khoản riêng vai trò Biên tập viên và một “mật khẩu ứng dụng” cho tài khoản đó. Mật khẩu ứng dụng không đăng nhập trang quản trị được và xóa được bất cứ lúc nào.</div></details><details class="reveal"><summary>Muốn ngừng dùng thì làm sao?</summary><div class="body">Thu hồi quyền ở Search Console, Google Analytics, WordPress và Facebook theo mục “Thu hồi quyền” bên trên. Phần mềm sẽ không truy cập được nữa.</div></details><details class="reveal"><summary>Không thấy mục Mật khẩu ứng dụng trong WordPress?</summary><div class="body">Website cần chạy https. Một số plugin bảo mật (ví dụ Wordfence) có thể tắt tính năng này. Không tự làm được thì cấp tạm tài khoản quản trị để SEOtukhoa làm giúp.</div></details></div>
   <div class="cta-band reveal" style="grid-template-columns:1fr">
     <div><h2>Cần hỗ trợ cài đặt?</h2><p>Nhắn Zalo hoặc gọi <a class="ct" href="tel:0842945555">0842 945 555</a>, bên em hướng dẫn trực tiếp từng bước.</p></div>
@@ -130,7 +130,7 @@
     <div class="cols">
       <div>
         <a class="logo" href="/"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="bgf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a5fd0"/><stop offset=".55" stop-color="#1f3370"/><stop offset="1" stop-color="#0b1533"/></linearGradient><linearGradient id="auf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ffd36b"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#bgf)"/><rect x=".5" y=".5" width="39" height="39" rx="10.5" fill="none" stroke="#fff" stroke-opacity=".16"/><rect x="9" y="23" width="5" height="8" rx="1.6" fill="#fff" fill-opacity=".55"/><rect x="17.5" y="18" width="5" height="13" rx="1.6" fill="#fff" fill-opacity=".8"/><rect x="26" y="12" width="5" height="19" rx="1.6" fill="url(#auf)"/><path d="M8.5 17.5 15.5 12l4.5 3 8.5-7" fill="none" stroke="url(#auf)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.8 8h3.9v3.9" fill="none" stroke="url(#auf)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SEO<b>tukhoa</b> Studio</span></a>
-        <p>Phần mềm SEO từ khóa bằng AI, chỉ dùng kết nối chính thức của Google và Facebook. Không tạo lượt truy cập ảo. Thứ hạng trên Google do Google quyết định; phần mềm giúp website tốt hơn theo đúng hướng dẫn của Google.</p>
+        <p>Phần mềm SEO từ khóa tự động, chỉ dùng kết nối chính thức của Google và Facebook. Không tạo lượt truy cập ảo. Thứ hạng trên Google do Google quyết định; phần mềm giúp website tốt hơn theo đúng hướng dẫn của Google.</p>
       </div>
       <div class="links">
         <b>Tìm hiểu</b>
@@ -148,7 +148,7 @@
         <a href="https://seotukhoa.biz/">seotukhoa.biz</a>
       </div>
     </div>
-    <div class="copy">© 2026 <span class="nw">SEOtukhoa Studio</span>. Phần mềm SEO từ khóa bằng AI cho doanh nghiệp Việt Nam.</div>
+    <div class="copy">© 2026 <span class="nw">SEOtukhoa Studio</span>. Phần mềm SEO từ khóa cho doanh nghiệp Việt Nam.</div>
   </div>
 </footer>
 
