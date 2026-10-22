@@ -138,10 +138,10 @@ section { padding: 88px 0; scroll-margin-top: 70px; }
 .alt .card { box-shadow: none; background: var(--bg); border-color: transparent; }
 .alt .card:hover { background: #fff; box-shadow: var(--shadow); }
 .card p { color: var(--muted); font-size: 15.5px; margin-top: 8px; }
-.icon { position: relative; width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 18px; color: var(--gold);
+.icon { position: relative; width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 18px; color: var(--gold);
   background: linear-gradient(150deg, #2b4ba6 0%, #15244f 55%, #0b1533 100%); box-shadow: 0 10px 20px rgba(11,21,51,.22), inset 0 1px 0 rgba(255,255,255,.18); }
 .icon::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(60% 50% at 30% 20%, rgba(255,255,255,.2), transparent 70%); }
-.icon svg { width: 26px; height: 26px; position: relative; z-index: 1; }
+.icon svg { width: 30px; height: 30px; position: relative; z-index: 1; }
 .icon.gold { color: var(--navy); background: linear-gradient(150deg, #ffe08a 0%, #ffc23d 50%, #ff9f1c 100%); box-shadow: 0 10px 22px rgba(255,159,28,.28), inset 0 1px 0 rgba(255,255,255,.55); }
 .icon.red { color: #fff; background: linear-gradient(150deg, #ff7a6b, #e5402f); box-shadow: 0 10px 22px rgba(229,64,47,.25); }
 
