@@ -341,6 +341,31 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
 .g-terms { margin: 16px 0 0; padding: 14px 0 0 20px; border-top: 1px dashed #f0c76a; color: #6b5a33; font-size: 14px; columns: 2; column-gap: 32px; }
 .g-terms li { margin: 4px 0; break-inside: avoid; }
 
+/* Báo giá */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.plans.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; margin: 0 auto; }
+.plan { position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+.plan h3 { font-size: 20px; }
+.plan .pm { margin: 10px 0 14px; }
+.plan .pm b { font-size: 34px; font-weight: 900; color: var(--navy); letter-spacing: -.02em; }
+.plan .pm small { display: block; color: var(--muted); font-size: 14px; }
+.plan .pt { list-style: none; padding: 0; margin: 0 0 20px; border-top: 1px dashed var(--line); }
+.plan .pt li { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 15px; color: #34405e; }
+.plan .pt li span { flex: 1; }
+.plan .pt li em { font-style: normal; font-size: 12px; font-weight: 800; color: #0b7a47; background: var(--green-soft); padding: 2px 7px; border-radius: 99px; }
+.plan .lim { color: var(--muted); margin: 0 0 6px; font-weight: 700; }
+.plan .ticks { flex: 1; margin-bottom: 20px; }
+.plan .btn { margin-top: auto; justify-content: center; }
+.plan.hl { background: linear-gradient(160deg, var(--navy3), var(--navy)); border: 2px solid var(--gold); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11,21,51,.28); color: #fff; }
+.plan.hl h3, .plan.hl .pm b { color: #fff; }
+.plan.hl .pm small, .plan.hl .lim { color: #aebce6; }
+.plan.hl .pt, .plan.hl .pt li { border-color: rgba(255,255,255,.15); color: #e3e9fb; }
+.plan.hl .ticks li { color: #e3e9fb; }
+.plan .ribbon { position: absolute; top: -14px; right: 18px; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #2a1a00; font-size: 12px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; padding: 5px 12px; border-radius: 99px; }
+.ptable th.c, .ptable td.c { text-align: center; }
+.ptable .yes svg { width: 20px; height: 20px; color: var(--green); stroke-width: 3; }
+.ptable .no { color: #b7bfd3; font-weight: 800; }
+
 /* Để nguyên hay bắt đầu */
 .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
 .choice ul { list-style: none; padding: 0; margin: 14px 0 0; }
@@ -375,7 +400,8 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .hero .wrap, .row, .cta-band, .guide, .why { grid-template-columns: 1fr; }
   .row.rev .txt { order: 0; }
   .g3, .g4, .cmp, .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .milestones { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+  .milestones, .plans, .plans.two { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+  .plan.hl { transform: none; }
   .ms-hl { transform: none; }
   .brands { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pains-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
