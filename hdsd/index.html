@@ -169,7 +169,13 @@ td:first-child { font-weight: 700; width: 38%; }
 .step p { color: var(--muted); }
 .cta-box { margin-top: 34px; background: linear-gradient(120deg, var(--navy) 0%, var(--navy3) 100%); color: #fff; border-radius: 20px; padding: 30px; display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .cta-box p { color: #cfd8f6; margin-top: 6px; }
-.fill { background: #fff3c4; color: #6b4a00; border: 1px dashed #e0a100; border-radius: 6px; padding: 0 6px; font-weight: 700; }
+.ct { color: var(--gold); font-weight: 800; text-decoration: none; white-space: nowrap; }
+.ct:hover { text-decoration: underline; }
+.zalo-float { position: fixed; right: 18px; bottom: 18px; z-index: 30; display: flex; align-items: center; gap: 10px; padding: 10px 16px 10px 10px; border-radius: 99px;
+  background: #0068ff; color: #fff; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 12px 28px rgba(0,104,255,.4); }
+.zalo-float i { width: 36px; height: 36px; border-radius: 50%; background: #fff; color: #0068ff; display: grid; place-items: center; font-style: normal; font-weight: 900; font-size: 12px; letter-spacing: -.02em; }
+.zalo-float:hover { filter: brightness(1.06); }
+@media (max-width: 640px) { .zalo-float span { display: none; } .zalo-float { padding: 10px; } }
 
 /* hướng dẫn */
 .guide-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
@@ -200,7 +206,7 @@ details[open] summary::after { content: "–"; }
 .faq details summary { font-size: 16px; }
 .faq .body { padding-left: 22px; }
 
-footer { background: var(--navy); color: #aebce6; padding: 40px 0; font-size: 14px; }
+footer { background: var(--navy); color: #aebce6; padding: 40px 0 96px; font-size: 14px; }
 footer .wrap { display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; }
 footer b { color: #fff; }
 footer p { max-width: 640px; margin-top: 8px; }
@@ -244,7 +250,7 @@ footer p { max-width: 640px; margin-top: 8px; }
       <a href="#hdsd">Hướng dẫn sử dụng</a>
       <a href="#hoi-dap">Hỏi đáp</a>
     </nav>
-    <a class="btn btn-gold" href="#bat-dau">Đăng ký dùng</a>
+    <a class="btn btn-gold" href="https://zalo.me/0842945555" target="_blank" rel="noopener">Đăng ký dùng</a>
   </div>
 </header>
 
@@ -486,9 +492,9 @@ footer p { max-width: 640px; margin-top: 8px; }
     <div class="cta-box" id="lien-he">
       <div>
         <h3 style="font-size:22px">Sẵn sàng đưa website lên top?</h3>
-        <p>Nhắn Zalo <span class="fill">[số Zalo]</span> hoặc gọi <span class="fill">[số điện thoại]</span> để được tư vấn và cài đặt.</p>
+        <p>Nhắn Zalo <a class="ct" href="https://zalo.me/0842945555" target="_blank" rel="noopener">0842 945 555</a> hoặc gọi <a class="ct" href="tel:0842945555">0842 945 555</a> để được tư vấn và cài đặt.</p>
       </div>
-      <a class="btn btn-gold" href="#lien-he"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg> Nhắn Zalo tư vấn</a>
+      <a class="btn btn-gold" href="https://zalo.me/0842945555" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg> Nhắn Zalo tư vấn</a>
     </div>
   </div>
 </section>
@@ -663,10 +669,12 @@ footer p { max-width: 640px; margin-top: 8px; }
     </div>
     <div>
       <b>Liên hệ</b>
-      <p>Zalo: <span class="fill">[số Zalo]</span><br>Email: <span class="fill">[email]</span></p>
+      <p>Zalo / Điện thoại: <a class="ct" href="https://zalo.me/0842945555" target="_blank" rel="noopener">0842 945 555</a><br>Email: <a class="ct" href="mailto:lienhe@seotukhoa.biz">lienhe@seotukhoa.biz</a></p>
     </div>
   </div>
 </footer>
+
+<a class="zalo-float" href="https://zalo.me/0842945555" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0842 945 555"><i>Zalo</i><span>0842 945 555</span></a>
 
 </body>
 </html>
