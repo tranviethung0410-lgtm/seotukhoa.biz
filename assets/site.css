@@ -314,6 +314,22 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
 .whytxt h3 em { font-style: normal; color: var(--red); }
 .whytxt > p { color: var(--muted); font-size: 17px; margin-top: 12px; }
 
+/* Cam kết 30/90/180 ngày */
+.milestones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.ms { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.ms-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.ms-top .icon { margin: 0; flex: none; }
+.ms-when { font-size: 22px; font-weight: 900; line-height: 1.2; background: linear-gradient(90deg, var(--gold2), var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ms h3 { font-size: 18px; }
+.ms ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.ms li { position: relative; padding-left: 28px; margin: 10px 0; font-size: 15.5px; color: #34405e; }
+.ms li::before { content: "✓"; position: absolute; left: 4px; color: var(--green); font-weight: 900; }
+.ms-hl { background: linear-gradient(160deg, var(--navy3), var(--navy)); border: 2px solid var(--gold); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11,21,51,.28); }
+.ms-hl h3 { color: #fff; }
+.ms-hl li { color: #e3e9fb; }
+.ms-hl li::before { color: var(--gold); }
+.ms-hl .ms-when { background: none; color: var(--gold); }
+
 /* Để nguyên hay bắt đầu */
 .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
 .choice ul { list-style: none; padding: 0; margin: 14px 0 0; }
@@ -348,6 +364,8 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .hero .wrap, .row, .cta-band, .guide, .why { grid-template-columns: 1fr; }
   .row.rev .txt { order: 0; }
   .g3, .g4, .cmp, .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .milestones { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+  .ms-hl { transform: none; }
   .brands { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pains-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .promise { flex-wrap: wrap; }
