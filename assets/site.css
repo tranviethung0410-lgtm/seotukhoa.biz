@@ -320,15 +320,25 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
 .ms-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
 .ms-top .icon { margin: 0; flex: none; }
 .ms-when { font-size: 22px; font-weight: 900; line-height: 1.2; background: linear-gradient(90deg, var(--gold2), var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.ms h3 { font-size: 18px; }
+.ms-goal { font-size: 30px; font-weight: 900; line-height: 1.1; color: var(--navy); letter-spacing: -.01em; }
+.ms-hl .ms-goal { color: #fff; }
+.ms h3 { font-size: 17px; margin-top: 4px; padding: 10px 12px; border-radius: 12px; background: var(--gold-soft); color: #6b4a00; }
+.ms-hl h3 { background: rgba(255,194,61,.16); color: var(--gold); }
 .ms ul { list-style: none; padding: 0; margin: 12px 0 0; }
 .ms li { position: relative; padding-left: 28px; margin: 10px 0; font-size: 15.5px; color: #34405e; }
 .ms li::before { content: "✓"; position: absolute; left: 4px; color: var(--green); font-weight: 900; }
 .ms-hl { background: linear-gradient(160deg, var(--navy3), var(--navy)); border: 2px solid var(--gold); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11,21,51,.28); }
-.ms-hl h3 { color: #fff; }
 .ms-hl li { color: #e3e9fb; }
 .ms-hl li::before { color: var(--gold); }
 .ms-hl .ms-when { background: none; color: var(--gold); }
+
+.guarantee { margin-top: 30px; border-radius: 20px; background: var(--gold-soft); border: 2px solid var(--gold); padding: 22px 26px; }
+.g-main { display: flex; align-items: center; gap: 18px; font-size: 17.5px; color: #3a2a05; }
+.g-main .icon { margin: 0; flex: none; }
+.g-main > div:nth-child(2) { flex: 1; }
+.g-main .btn { flex: none; }
+.g-terms { margin: 16px 0 0; padding: 14px 0 0 20px; border-top: 1px dashed #f0c76a; color: #6b5a33; font-size: 14px; columns: 2; column-gap: 32px; }
+.g-terms li { margin: 4px 0; break-inside: avoid; }
 
 /* Để nguyên hay bắt đầu */
 .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
@@ -387,7 +397,9 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .row .txt h3, .chipnum { font-size: 22px; }
   .rows { gap: 56px; }
   .g2, .g3, .g4, .cmp, .steps, .choice, .journey, .objs { grid-template-columns: 1fr; }
-  .promise, .bridge { flex-direction: column; align-items: flex-start; }
+  .promise, .bridge, .g-main { flex-direction: column; align-items: flex-start; }
+  .g-main .btn { width: 100%; }
+  .g-terms { columns: 1; }
   .bridge .btn { width: 100%; }
   .cta-band { padding: 30px 20px; }
   table { display: block; overflow-x: auto; }
