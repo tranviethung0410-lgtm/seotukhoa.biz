@@ -49,6 +49,8 @@ section { padding: 88px 0; scroll-margin-top: 70px; }
 .logo { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 800; font-size: 18px; }
 .logo .mark { width: 38px; height: 38px; flex: none; filter: drop-shadow(0 6px 14px rgba(58,95,208,.45)); }
 .logo b { color: var(--gold); font-weight: 900; }
+/* Tên thương hiệu luôn đi liền một dòng */
+.nw, .logo span { white-space: nowrap; }
 .menu { display: flex; gap: 24px; margin-left: auto; }
 .menu a { color: #cfd8f6; text-decoration: none; font-size: 14.5px; font-weight: 600; }
 .menu a:hover, .menu a.on { color: #fff; }
@@ -353,7 +355,12 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .row .txt h3 { font-size: 22px; }
   .rows { gap: 56px; }
   .g2, .g3, .g4, .cmp, .steps, .choice, .journey, .objs { grid-template-columns: 1fr; }
-  .promise { flex-direction: column; align-items: flex-start; }
+  .promise, .bridge { flex-direction: column; align-items: flex-start; }
+  .bridge .btn { width: 100%; }
+  .cta-band { padding: 30px 20px; }
+  table { display: block; overflow-x: auto; }
+  th, td { padding: 10px 12px; }
+  .cta-band > *, .guide > *, .toc { min-width: 0; }
   .tier { flex-direction: column; align-items: flex-start; gap: 8px; margin-right: 0 !important; }
   .whytxt h3 { font-size: 22px; }
   .promise .btn { width: 100%; }
