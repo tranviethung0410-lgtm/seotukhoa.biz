@@ -52,6 +52,7 @@ section { padding: 88px 0; scroll-margin-top: 70px; }
 .logo b { color: var(--gold); font-weight: 900; }
 /* Tên thương hiệu luôn đi liền một dòng */
 .nw, .logo span { white-space: nowrap; }
+.logo span b, footer .logo b { display: inline; margin: 0; color: var(--gold); }
 .menu { display: flex; gap: 24px; margin-left: auto; }
 .menu a { color: #cfd8f6; text-decoration: none; font-size: 14.5px; font-weight: 600; }
 .menu a:hover, .menu a.on { color: #fff; }
