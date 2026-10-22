@@ -4,6 +4,7 @@
 
 ## Trang chính
 - [Giới thiệu phần mềm](https://seotukhoa.biz/): tính năng, cách hoạt động, chốt an toàn, so sánh, câu hỏi thường gặp
+- [Báo giá](https://seotukhoa.biz/baogia/): gói Cơ bản, Pro, Doanh nghiệp; giá theo tháng, 6 tháng, 12 tháng; điều kiện cam kết TOP
 - [Hướng dẫn sử dụng](https://seotukhoa.biz/hdsd/): cấp quyền Search Console, Google Analytics, WordPress, Fanpage; cài đặt và vận hành
 
 ## Liên hệ
