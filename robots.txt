@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /_noi_dung/
+Disallow: /_mau/
 
 Sitemap: https://seotukhoa.biz/sitemap.xml
