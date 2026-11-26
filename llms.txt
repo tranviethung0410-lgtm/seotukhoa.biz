@@ -3,8 +3,8 @@
 > Phần mềm SEO từ khóa cho doanh nghiệp Việt Nam. Đọc số liệu thật từ Google Search Console, tự tối ưu tiêu đề, mô tả, liên kết nội bộ, alt ảnh, FAQ trên WordPress, viết bài có kiểm tra sự thật, lên lịch Fanpage và YouTube, đo lại sau 28 ngày và tự hoàn tác khi kết quả xấu. Không tạo lượt truy cập ảo.
 
 ## Trang chính
-- [Giới thiệu phần mềm](https://seotukhoa.biz/): tính năng, cách hoạt động, chốt an toàn, so sánh, câu hỏi thường gặp
-- [Báo giá](https://seotukhoa.biz/baogia/): gói Cơ bản, Pro, Doanh nghiệp; giá theo tháng, 6 tháng, 12 tháng; điều kiện cam kết TOP (gói Pro (tối đa 5 từ khóa dài) và gói Doanh nghiệp (tối đa 15 từ khóa dài), hợp đồng từ 6 tháng)
+- [Phần mềm SEO từ khóa SEOtukhoa Studio](https://seotukhoa.biz/): phần mềm SEO từ khóa là gì, tính năng, cách hoạt động, chốt an toàn, so sánh, câu hỏi thường gặp
+- [Báo giá dịch vụ SEO từ khóa](https://seotukhoa.biz/baogia/): gói Cơ bản, Pro, Doanh nghiệp; giá theo tháng, 6 tháng, 12 tháng; điều kiện cam kết TOP (gói Pro (tối đa 5 từ khóa dài) và gói Doanh nghiệp (tối đa 15 từ khóa dài), hợp đồng từ 6 tháng); hỏi đáp về giá
 - [Hướng dẫn sử dụng](https://seotukhoa.biz/hdsd/): cấp quyền Search Console, Google Analytics, WordPress, Fanpage; cài đặt và vận hành
 
 ## Blog

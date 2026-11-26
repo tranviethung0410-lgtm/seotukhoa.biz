@@ -464,3 +464,15 @@ footer .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; pad
   .mbar .btn { height: auto; min-height: 48px; padding: 8px 12px; font-size: 15.5px; width: 100%; }
   .shot-wrap::before { display: none; }
 }
+
+/* Link trong câu (xuống dòng bình thường), dòng ngày cập nhật, bảng tóm tắt trang chủ */
+.lk { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.lk:hover { text-decoration-thickness: 2px; }
+.page-hero p a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.updated { color: var(--muted); font-size: 13.5px; margin-top: 16px; }
+.page-hero .updated { color: #cfd8f6; margin-top: 14px; }
+.updated time, .updated .author { font-weight: 700; }
+#la-gi h3 { font-size: 20px; margin-top: 8px; }
+.sum-table td:first-child { font-weight: 700; white-space: nowrap; }
+#bai-viet .card h3 a { color: var(--navy); text-decoration: none; }
+#bai-viet .card h3 a:hover { text-decoration: underline; }
